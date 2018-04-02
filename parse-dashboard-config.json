@@ -2,15 +2,15 @@
   "apps": [
     {
       "serverURL": "http://localhost:1337/parse",
-      "appId": "AppID123",
-      "masterKey": "MasterKey456",
-      "appName": "Demo"
+      "appId": "123",
+      "masterKey": "456",
+      "appName": "KLOUDBOY"
     }
   ],
   "users": [
       {
            "user":"admin",
-           "pass":"pass"
+           "pass":"kloudboy"
       }
   ]
 }
