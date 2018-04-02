@@ -38,7 +38,7 @@ npm -g install
 echo
 echo 'Saving PM2 for Service Live';
 sleep 2;
-echo 'Dont 4get to change Defult credntiols';
+echo 'Happy Ending';
 echo
 pm2 start index.js && pm2 startup
 pm2 start dashboard-running.json && pm2 startup
