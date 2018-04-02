@@ -1,5 +1,4 @@
-
-  "apps" : [{
+"apps" : [{
     "name"        : "parse-dashboard-wrapper",
     "script"      : "parse-dashboard",
     "watch"       : true,
