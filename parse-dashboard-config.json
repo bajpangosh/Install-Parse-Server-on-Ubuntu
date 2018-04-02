@@ -2,8 +2,8 @@
   "apps": [
     {
       "serverURL": "http://localhost:1337/parse",
-      "appId": "123",
-      "masterKey": "456",
+      "appId": "KLOUDBOY123",
+      "masterKey": "KLOUDBOY456",
       "appName": "KLOUDBOY"
     }
   ],
