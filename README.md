@@ -1,8 +1,18 @@
 # Install-Parse-Server-on-Ubuntu
 How To Install Parse Server on Ubuntu 16.04 &amp; 14.04
 
-wget -qO easy-install.sh https://goo.gl/MqHjBy
+> **step 1**
 
-chmod 777 easy-install.sh
+```wget -qO easy-install.sh https://goo.gl/MqHjBy```
 
-./easy-install.sh
+> **step 2**
+
+```chmod 777 easy-install.sh```
+
+> **step 3**
+
+```./easy-install.sh```
+
+Here is the video tutorial
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/4ftVtxVkXuw/0.jpg)](https://www.youtube.com/watch?v=4ftVtxVkXuw)
