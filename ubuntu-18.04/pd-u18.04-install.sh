@@ -10,7 +10,8 @@ cd ~
 echo 'installing Node Js';
 sleep 2;
 apt-get update
-apt-get install -y nodejs npm build-essential pwgen libkrb5-dev nginx
+curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
+sudo apt-get install -y nodejs npm build-essential pwgen libkrb5-dev nginx
 
 echo "Sit back and relax :) ......"
 sleep 2;
@@ -72,8 +73,19 @@ sudo sed -i -e "s/http/https/" "/root/$APP_NAME/index.js"
 MASTER_KEY=`pwgen -s 26 1`
 sudo sed -i "s/masterKey: process.env.MASTER_KEY || .*/masterKey: process.env.MASTER_KEY || '$MASTER_KEY',/" /root/$APP_NAME/index.js
 sudo sed -i -e "s/MASTER_KEY/$MASTER_KEY/" "/root/$APP_NAME/parse-dashboard-config.json"
-echo 'Happy Ending';
+
+PASS=`pwgen -s 7 1`
+sudo sed -i -e "s/PASS/$PASS/" "/root/$APP_NAME/parse-dashboard-config.json"
+echo 'Enable pm2';
 echo
 pm2 start index.js && pm2 startup
 pm2 start dashboard-running.json && pm2 startup
-pm2 status
+echo "Here is your Credentials"
+echo "APP_ID:   $APP_ID"
+echo "MASTER_KEY:   $MASTER_KEY"
+echo "Password:   $PASS"
+
+echo "Installation & configuration succesfully finished.
+Twitter: @TeamKloudboy
+e-mail: support@kloudboy.com
+Bye!"
