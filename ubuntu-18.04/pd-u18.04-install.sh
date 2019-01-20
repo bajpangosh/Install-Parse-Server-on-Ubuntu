@@ -10,7 +10,25 @@ cd ~
 echo 'installing Node Js';
 sleep 2;
 apt-get update
-apt-get install -y nodejs npm build-essential pwgen libkrb5-dev
+apt-get install -y nodejs npm build-essential pwgen libkrb5-dev nginx
+
+echo "Sit back and relax :) ......"
+sleep 2;
+cd /etc/nginx/sites-available/
+sudo wget -O "$DOMAIN" https://goo.gl/XYY7Hb
+sudo sed -i -e "s/example.com/$DOMAIN/" "$DOMAIN"
+sudo sed -i -e "s/www.example.com/www.$DOMAIN/" "$DOMAIN"
+sudo ln -s /etc/nginx/sites-available/"$DOMAIN" /etc/nginx/sites-enabled/
+
+echo "Setting up Cloudflare FULL SSL"
+sleep 2;
+sudo mkdir /etc/nginx/ssl
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/nginx.key -out /etc/nginx/ssl/nginx.crt
+sudo openssl dhparam -out /etc/nginx/ssl/dhparam.pem 2048
+cd /etc/nginx/
+sudo mv nginx.conf nginx.conf.backup
+sudo wget -O nginx.conf https://goo.gl/7UBeQS
+sudo systemctl reload nginx
 
 echo 'installing Mongo DB';
 sleep 2;
