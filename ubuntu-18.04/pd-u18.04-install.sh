@@ -3,12 +3,12 @@ sleep 2;
 cd ~
 echo 'installing python-software-properties';
 sleep 2;
-apt-get install -y build-essential git python-software-properties
+sudo apt-get install curl python-software-properties
 
 echo 'installing Node Js';
 sleep 2;
 apt-get update
-apt-get install -y nodejs npm
+apt-get install -y nodejs npm pwgen
 apt-get install -y build-essential
 
 echo 'installing Mongo DB';
