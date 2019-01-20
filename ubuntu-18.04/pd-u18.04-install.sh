@@ -8,7 +8,7 @@ apt-get install -y build-essential git python-software-properties
 echo 'installing Node Js';
 sleep 2;
 apt-get update
-apt-get install -y nodejs
+apt-get install -y nodejs npm
 apt-get install -y build-essential
 
 echo 'installing Mongo DB';
