@@ -1,7 +1,7 @@
-# How To Install WordPress with LEMP on Ubuntu 18.04
-> This LEMP stack is that fastest way to start running WordPress on your server. Using Nginx, PHP 7.2, Mariadb.
+# How To Run Parse Server and Parse Dashboard on Ubuntu 18.04
+> This bash script is that fastest way to install Parse Server and Parse Dashboard on your server.
 
-![](wordpress.jpg)
+![](parse.jpg)
 
 ## Installation & Usage
 
@@ -10,26 +10,15 @@
 Linux Only:
 
 ```sh
-wget -qO wp-u18-04 run.kloudboy.com/wp-u18-04 && sudo bash wp-u18-04
+wget -qO pd-u18-04 run.kloudboy.com/pd-u18-04 && sudo bash pd-u18-04
 ```
-
-## If you want to install another Wordpress on same droplet, use below script
-
-```sh
-wget -qO wps-u18-04 run.kloudboy.com/wps-u18-04 && sudo bash wps-u18-04
-```
-
 ## Features
 
 > Nginx (updated)
 
-> PHP 7.2
+> Node js 11.x
 
-> PHP-fpm
-
-> Mariadb (updated)
-
-> Wordpress (updated)
+> Mongodb 4.0
 
 > Cloudflare Full SSL
 
@@ -60,3 +49,7 @@ twitter  :- https://twitter.com/TeamKloudBoy
 ticket   :-https://kloudboy.freshdesk.com/support/home
 
 https://kloudboy.com/
+
+## Thanks
+
+Your boy, KLOUDBOY.💕
