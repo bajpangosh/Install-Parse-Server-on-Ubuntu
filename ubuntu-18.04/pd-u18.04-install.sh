@@ -67,6 +67,8 @@ sudo sed -i -e "s/APP_ID/$APP_ID/" "/root/$APP_NAME/parse-dashboard-config.json"
 sudo sed -i -e "s/APP_NAME/$APP_NAME/" "/root/$APP_NAME/parse-dashboard-config.json"
 sudo sed -i -e "s/DOMAIN/$DOMAIN/" "/root/$APP_NAME/parse-dashboard-config.json"
 sudo sed -i -e "s/APP_NAME/$APP_NAME/" "/root/$APP_NAME/dashboard-running.json"
+sudo sed -i -e "s/localhost:1337/app.$DOMAIN/" "/root/$APP_NAME/index.js"
+sudo sed -i -e "s/http/https/" "/root/$APP_NAME/index.js"
 MASTER_KEY=`pwgen -s 26 1`
 sudo sed -i "s/masterKey: process.env.MASTER_KEY || .*/masterKey: process.env.MASTER_KEY || '$MASTER_KEY',/" /root/$APP_NAME/index.js
 sudo sed -i -e "s/MASTER_KEY/$MASTER_KEY/" "/root/$APP_NAME/parse-dashboard-config.json"
