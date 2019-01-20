@@ -16,10 +16,10 @@ echo "Sit back and relax :) ......"
 sleep 2;
 cd /etc/nginx/sites-available/
 sudo wget -O "app.$DOMAIN" https://goo.gl/2H3uGq
-sudo sed -i -e "s/example.com/$DOMAIN/" "$DOMAIN"
+sudo sed -i -e "s/app.example.com/app.$DOMAIN/" "$DOMAIN"
 
 sudo wget -O "dash.$DOMAIN" https://goo.gl/VZhPLP
-sudo sed -i -e "s/example.com/$DOMAIN/" "$DOMAIN"
+sudo sed -i -e "s/dash.example.com/dash.$DOMAIN/" "$DOMAIN"
 
 sudo ln -s /etc/nginx/sites-available/"app.$DOMAIN" /etc/nginx/sites-enabled/
 sudo ln -s /etc/nginx/sites-available/"dash.$DOMAIN" /etc/nginx/sites-enabled/
@@ -41,7 +41,7 @@ echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/
 apt-get update
 apt-get install -y mongodb-org
 service mongod start
-
+cd ~
 echo 'Installing Parse Server Dashboard and PM2';
 sleep 2;
 
