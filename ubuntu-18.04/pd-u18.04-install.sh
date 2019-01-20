@@ -15,10 +15,14 @@ apt-get install -y nodejs npm build-essential pwgen libkrb5-dev nginx
 echo "Sit back and relax :) ......"
 sleep 2;
 cd /etc/nginx/sites-available/
-sudo wget -O "$DOMAIN" https://goo.gl/XYY7Hb
+sudo wget -O "app.$DOMAIN" https://goo.gl/2H3uGq
 sudo sed -i -e "s/example.com/$DOMAIN/" "$DOMAIN"
-sudo sed -i -e "s/www.example.com/www.$DOMAIN/" "$DOMAIN"
-sudo ln -s /etc/nginx/sites-available/"$DOMAIN" /etc/nginx/sites-enabled/
+
+sudo wget -O "dash.$DOMAIN" https://goo.gl/VZhPLP
+sudo sed -i -e "s/example.com/$DOMAIN/" "$DOMAIN"
+
+sudo ln -s /etc/nginx/sites-available/"app.$DOMAIN" /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/"dash.$DOMAIN" /etc/nginx/sites-enabled/
 
 echo "Setting up Cloudflare FULL SSL"
 sleep 2;
