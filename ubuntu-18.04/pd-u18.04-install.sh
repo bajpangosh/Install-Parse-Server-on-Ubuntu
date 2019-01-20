@@ -1,39 +1,24 @@
-#!/bin/bash
-# GET ALL USER INPUT
-echo 'Wellcome to Parse Server and Dashboard on Ubuntu 18.04 install bash script';
+echo 'Wellcome to Parse Server and Dashboard on Ubuntu install script';
 sleep 2;
-echo "Domain Name (eg. example.com)?"
-read DOMAIN
 cd ~
 echo 'installing python-software-properties';
 sleep 2;
-sudo apt-get update && sudo apt-get upgrade
-sudo apt-get install -y build-essential git python-software-properties pwgen nginx
+apt-get install -y build-essential git python-software-properties
 
 echo 'installing Node Js';
 sleep 2;
-
-sudo apt-get install -y nodejs
-sudo apt-get install -y build-essential
+apt-get update
+apt-get install -y nodejs
+apt-get install -y build-essential
 
 echo 'installing Mongo DB';
 sleep 2;
 
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
 echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
-sudo apt-get update
-sudo apt-get install -y mongodb-org
-sudo service mongod start
-
-echo "Setting up Cloudflare FULL SSL"
-sleep 2;
-sudo mkdir /etc/nginx/ssl
-sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/nginx.key -out /etc/nginx/ssl/nginx.crt
-sudo openssl dhparam -out /etc/nginx/ssl/dhparam.pem 2048
-cd /etc/nginx/
-sudo mv nginx.conf nginx.conf.backup
-sudo wget -O nginx.conf https://goo.gl/n8crcR
-sudo mkdir /var/www/"$DOMAIN"
-cd /var/www/"$DOMAIN"
+apt-get update
+apt-get install -y mongodb-org
+service mongod start
 
 echo 'Installing Parse Server Dashboard and PM2';
 sleep 2;
@@ -53,19 +38,10 @@ echo
 echo 'Adding APP_ID and MASTER_KEY';
 sleep 2;
 APP_ID=`pwgen -s 24 1`
-sudo sed -i "s/appId: process.env.APP_ID || .*/appId: process.env.APP_ID || '$APP_ID',/" /var/www/"$DOMAIN"/parse-server-example/index.js
-MASTER_KEY=`pwgen -s 26 1`
-sudo sed -i "s/masterKey: process.env.MASTER_KEY || .*/masterKey: process.env.MASTER_KEY || '$MASTER_KEY',/" /var/www/"$DOMAIN"/parse-server-example/index.js
+sudo sed -i "s/appId: process.env.APP_ID || .*/appId: process.env.APP_ID || '$APP_ID',/" /root/parse-server-example/index.js
+sudo sed -i "s/masterKey: process.env.MASTER_KEY || .*/masterKey: process.env.MASTER_KEY || 'KLOUDBOY456',/" /root/parse-server-example/index.js
 echo 'Happy Ending';
 echo
 pm2 start index.js && pm2 startup
 pm2 start dashboard-running.json && pm2 startup
 pm2 status
-echo "Here is your App Credentials"
-echo "APP ID:   $APP_ID"
-echo "MASTER KEY:   $MASTER_KEY"
-
-echo "Installation & configuration succesfully finished.
-Twitter: @TeamKloudboy
-e-mail: support@kloudboy.com
-Bye!"
