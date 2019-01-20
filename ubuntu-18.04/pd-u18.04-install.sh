@@ -16,10 +16,10 @@ echo "Sit back and relax :) ......"
 sleep 2;
 cd /etc/nginx/sites-available/
 sudo wget -O "app.$DOMAIN" https://goo.gl/2H3uGq
-sudo sed -i -e "s/app.example.com/app.$DOMAIN/" "$DOMAIN"
+sudo sed -i -e "s/app.example.com/app.$DOMAIN/" "app.$DOMAIN"
 
 sudo wget -O "dash.$DOMAIN" https://goo.gl/VZhPLP
-sudo sed -i -e "s/dash.example.com/dash.$DOMAIN/" "$DOMAIN"
+sudo sed -i -e "s/dash.example.com/dash.$DOMAIN/" "dash.$DOMAIN"
 
 sudo ln -s /etc/nginx/sites-available/"app.$DOMAIN" /etc/nginx/sites-enabled/
 sudo ln -s /etc/nginx/sites-available/"dash.$DOMAIN" /etc/nginx/sites-enabled/
