@@ -4,9 +4,12 @@
       "serverURL": "http://localhost:1337/parse",
       "appId": "APP_ID",
       "masterKey": "MASTER_KEY",
-      "appName": "APP_NAME"
+      "appName": "APP_NAME",
+      "iconName": "MyAppIcon.png",
+      "supportedPushLocales": ["en", "ru", "fr"]
     }
   ],
+
   "users": [
       {
            "user":"admin",
