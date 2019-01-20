@@ -1,7 +1,7 @@
 # How To Run Parse Server and Parse Dashboard on Ubuntu 18.04
 > This bash script is that fastest way to install Parse Server and Parse Dashboard on your server.
 
-![](parse.jpg)
+![](parse.png)
 
 ## Installation & Usage
 
