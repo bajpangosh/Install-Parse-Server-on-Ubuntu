@@ -1,9 +1,8 @@
 # How To Run Parse Server and Parse Dashboard on Ubuntu 18.04
 > This bash script is that fastest way to install Parse Server and Parse Dashboard on your server.
+## Use only on Ubuntu 18.04.1 LTS (Bionic Beaver)
 
 ![](parse.png)
-
-## Use only on Ubuntu 18.04.1 LTS (Bionic Beaver)
 
 ## Installation & Usage
 
@@ -12,10 +11,12 @@ Add your domain to [cloudflare](https://www.cloudflare.com/)
 
 ## Step 2
 ![](ssl.png)
+
 Activate FULL SSL.
 
 ## Step 3
 ![](dns.png)
+
 add 2 sub-domains with your VPS ip A record.
 app.yourdomain.com
 dash.yourdomain.com
