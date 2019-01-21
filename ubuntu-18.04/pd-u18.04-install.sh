@@ -7,11 +7,11 @@ read APP_NAME
 echo 'Wellcome to Parse Server and Dashboard on Ubuntu 18.04 install bash script';
 sleep 2;
 cd ~
-echo 'installing Node Js';
+echo 'installing Node Js and Nginx Server';
 sleep 2;
 apt-get update
 curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
-sudo apt-get install -y nodejs npm build-essential pwgen libkrb5-dev nginx
+sudo apt-get install -y nodejs pwgen nginx
 
 echo "Sit back and relax :) ......"
 sleep 2;
@@ -49,9 +49,6 @@ sleep 2;
 git clone https://github.com/ParsePlatform/parse-server-example.git $APP_NAME
 cd $APP_NAME
 npm install -g parse-server mongodb-runner parse-dashboard pm2@latest --no-optional --no-shrinkwrap
-npm install express --save
-npm install parse-server --save
-
 echo
 echo 'Downloading Parse Server Dashboard Configrtion Files';
 sleep 2;
