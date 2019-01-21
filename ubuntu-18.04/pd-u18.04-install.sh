@@ -92,12 +92,18 @@ echo "APP_ID:   $APP_ID"
 echo
 echo "MASTER_KEY:   $MASTER_KEY"
 echo
+echo "App:        https://app.$DOMAIN"
+echo "Dashboard:  https://dash.$DOMAIN"
+echo
+echo "Username:   admin"
 echo "Password:   $PASS"
 echo "--------------------------------"
 tput sgr0
 echo
 echo
-echo "Installation & configuration succesfully finished."
+tput setaf 3;  echo "Installation & configuration succesfully finished."
+echo
 echo "Twitter @TeamKloudboy"
 echo "E-mail: support@kloudboy.com"
 echo "Bye! Your boy KLOUDBOY!"
+tput sgr0
