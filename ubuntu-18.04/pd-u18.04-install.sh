@@ -4,8 +4,9 @@ echo "Domain Name (eg. example.com)?"
 read DOMAIN
 echo "App name (eg. kloudboy)?"
 read APP_NAME
-echo 'Wellcome to Parse Server and Dashboard on Ubuntu 18.04 install bash script';
+tput setaf 2; echo 'Wellcome to Parse Server and Dashboard on Ubuntu 18.04 install bash script';
 sleep 2;
+tput sgr0
 cd ~
 echo 'installing Node Js and Nginx Server';
 sleep 2;
@@ -77,12 +78,16 @@ echo 'Enable pm2';
 echo
 pm2 start index.js && pm2 startup
 pm2 start dashboard-running.json && pm2 startup
-echo "Here is your Credentials"
+echo
+echo
+tput setaf 2; echo "Here is your Credentials"
 echo "APP_ID:   $APP_ID"
 echo "MASTER_KEY:   $MASTER_KEY"
 echo "Password:   $PASS"
-
-echo "Installation & configuration succesfully finished.
-Twitter: @TeamKloudboy
-e-mail: support@kloudboy.com
-Bye!"
+tput sgr0
+echo
+echo
+echo "Installation & configuration succesfully finished."
+echo "Twitter @TeamKloudboy"
+echo "E-mail: support@kloudboy.com"
+echo "Bye! Your boy KLOUDBOY!"
