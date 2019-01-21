@@ -1,7 +1,7 @@
 # Install-Parse-Server-on-Ubuntu
 How To Install Parse Server on Ubuntu 16.04 &amp; 14.04 (root)
 
-Updated version of this script available here please use this one
+# Updated version of this script available here please use this one
 https://goo.gl/8cSZyx
 
 
