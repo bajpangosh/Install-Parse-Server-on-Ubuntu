@@ -4,7 +4,7 @@ echo "Domain Name (eg. example.com)?"
 read DOMAIN
 echo "App name (eg. kloudboy)?"
 read APP_NAME
-echo 'Wellcome to Parse Server and Dashboard on Ubuntu install script';
+echo 'Wellcome to Parse Server and Dashboard on Ubuntu 18.04 install bash script';
 sleep 2;
 cd ~
 echo 'installing Node Js';
