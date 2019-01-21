@@ -7,35 +7,38 @@
 
 ## Installation & Usage
 
-### Step 1
+## Step 1
 Add your domain to [cloudflare](https://www.cloudflare.com/)
 
-### Step 2
+## Step 2
 ![](ssl.png)
 Activate FULL SSL.
 
-### Step 3
+## Step 3
 ![](dns.png)
 add 2 sub-domains with your VPS ip A record.
 app.yourdomain.com
 dash.yourdomain.com
 
-### step 4
+## Step 4
 ssh login to your vps (root)
+
 paste below code and press ENTER.
 
 ```sh
 wget -qO pd-u18-04 run.kloudboy.com/pd-u18-04 && sudo bash pd-u18-04
 ```
-### Step 5
+## Step 5
 ![](sshconsole.png)
+
 it will ask you your domain name and app name then press ENTER.
 
-### Step 6
+## Step 6
 the Installation will start. after sometime you need to fill or press Enter in SSL certificate generator.
 
-### Step 7
+## Step 7
 ![](key.png)
+
 After successful Installation your Credentials shows (take a copy to notepad and save it.).
 you can login to Parse Dashboard. https://dash.yourdomain.com (username is admin)
 
