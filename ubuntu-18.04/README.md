@@ -67,6 +67,8 @@ I'm a freelancer living in Kerala, India. I mostly do server administration, bas
 
 Currently I'm making lots of easy install bash scripts, web tools, websites and apps to help people solve problems, if you enjoy my works please consider making a donation 💕. My ultimate goal is to become a full-time open-source ninja.
 
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/O4O41E4TQ)
+
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.me/bajpangosh)
 
 ## NEED HELP?
